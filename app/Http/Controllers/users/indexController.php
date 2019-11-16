@@ -45,7 +45,7 @@ class indexController extends Controller
             $data = Users::where('id', '=', $id)->get();
             return view('users.profile', ['data' => $data]);
         }else{
-            echo "Houston sorun var";
+            echo "Houston have a problem!";
         }
     }
 
@@ -88,7 +88,7 @@ class indexController extends Controller
         }
         else
         {
-            return redirect()->back()->with('status','Bir Şeyler Oldu. Susar mısın? Kod çalışmıyor. :S :S ');
+            return redirect()->back()->with('status','Houston have a problem!');
         }
     }
 
