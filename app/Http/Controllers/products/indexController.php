@@ -64,7 +64,7 @@ class indexController extends Controller
         }
         else
         {
-            return redirect()->back()->with('status','Bir Şeyler Oldu. Susar mısın? Kod çalışmıyor. :S :S ');
+            return redirect()->back()->with('status','Houston have a problem! ');
         }
     }
 

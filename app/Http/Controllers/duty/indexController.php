@@ -44,8 +44,6 @@ class indexController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     * BURADA VERİ GELİYORSA USERS TABLOSUNA BAĞLANIP AKTİF OLAN KULLANICNIN ID ALIP
-     * DUTIES TABLOSUNDA Kİ ADD_PERSONEL SUTUNA EKLENECEK.
      */
     public function store(Request $request)
     {
