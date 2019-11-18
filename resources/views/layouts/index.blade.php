@@ -125,8 +125,8 @@
                     <ul class="dropdown-menu extended logout dropdown-menu-right">
                         <div class="log-arrow-up"></div>
                         <li style="width: 48.3%!important;"><a href=""><i class=" fa fa-suitcase"></i>Profil</a></li>
-                        <li style="width: 48.3%!important;"><a onclick="event.preventDefault();document.getElementById('logout-form').submit();" href="{{route('logout')}}"><i class="fa fa-key"></i> Çıkış Yap</a></li>
-                        <form action="{{route('logout')}}" id="logout-form" method="post">{{csrf_field()}}</form>
+                        <li style="width: 48.3%!important;"><a onclick="event.preventDefault();document.getElementById('logout-form').submit();" href="{{route('logout', \Illuminate\Support\Facades\Auth::user()->id)}}"><i class="fa fa-key"></i> Çıkış Yap</a></li>
+                        <form action="{{route('logout', \Illuminate\Support\Facades\Auth::user()->id)}}" id="logout-form" method="post">{{csrf_field()}}</form>
                     </ul>
                 </li>
                     @else

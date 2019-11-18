@@ -10,7 +10,7 @@
                 </a>
             </li>
             <!-- BU ALANI SADECE ADMİN GÖREBLİR // THIS SITE ONLY SEE ADMINISTRATOR-->
-
+            @if (\Illuminate\Support\Facades\Auth::user()->user_auth == "1")
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-book"></i>
@@ -21,6 +21,7 @@
                     <li><a  href="{{route(('users.create'))}}">Yeni Kullanıcı Ekle</a></li>
                 </ul>
             </li>
+            @endif
             <!---->
             <li class="sub-menu">
                 <a href="javascript:;" >
