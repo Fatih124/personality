@@ -27,6 +27,7 @@
                                         <th class="text-center">Görev İsmi</th>
                                         <th class="text-center">Başlangıç Tarihi</th>
                                         <th class="text-center">Bitiş Tarihi</th>
+                                        <th class="text-center">Durum</th>
                                         <th class="text-center">Detay</th>
                                         <th class="text-center">Düzenle</th>
                                         <th class="text-center">Sil</th>
@@ -36,6 +37,11 @@
                                             <td class="pt-3-half">{{$value['duty_name']}}</td>
                                             <td class="pt-3-half">{{$value['duty_startdate']}}</td>
                                             <td class="pt-3-half">{{$value['duty_endtime']}}</td>
+                                            @if($value['duty_status']!='1')
+                                                <td class="pt-2-half"><span class="badge badge-danger">Aktif</span></td>
+                                            @else
+                                                <td class="pt-2-half"><span class="badge badge-dark">Pasif</span></td>
+                                            @endif
                                             <td class="pt-2-half">
                                                 <span class="table-show"><a href="{{route('duty.show', ['duty_id'=>$value['duty_id']])}}"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0">İncele</button></a></span>
                                             </td>
