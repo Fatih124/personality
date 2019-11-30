@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.index');
+        $count = DB:: table('duties')->get();
+$drt = count($count);
+        return view('layouts.index', ['count'=>$count, 'drt'=>$drt]);
     }
 
     public function logout()
