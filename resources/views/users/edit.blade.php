@@ -68,7 +68,7 @@
                                 <div class="form-group" style="width: 290px; float: left;">
                                     <label  class="col-lg-2 control-label">Şifre</label>
                                     <div class="col-lg-12">
-                                        <input type="password" name="user_password" required class="form-control" id="password" value="{{$data[0]['password']}}">
+                                        <input type="password" name="password" required class="form-control" id="password" value="{{$data[0]['password']}}">
                                     </div>
                                 </div>
                                 <div class="form-group" style="width: 290px; float: left;">
