@@ -28,7 +28,7 @@ class indexController extends Controller
         $all = $request->except('_token');
         $all['selflink'] = mHelper::permalink($all['name']);
         $all['user_pic'] = imageUpload::singleUpload(rand(1, 9000), "users", $request->file('user_pic'));
-        Hash::make($all['user_password']);
+        $all['password'] = Hash::make($all['password']);
         $insert= Users::create($all);
         if ($insert){
             return redirect()->back()->with('status', 'Kullanıcı Eklendi.');
@@ -74,7 +74,7 @@ class indexController extends Controller
             $all = $request->except('_token');
             $all['selflink'] = mHelper::permalink($all['name']);
             $all['user_pic'] = imageUpload::singleUploadUpdate(rand(1,900), "users", $request->file('user_pic'),$data,"user_pic");
-            $all['user_password'] = Hash::make($all['user_password']);
+            $all['password'] = Hash::make($all['password']);
             $update = Users::where('id','=',$id)->update($all);
 //TABLO İSİMLERİNİ AUTH ILE GELEN İSİMLER GİBİ YAP//
             if ($update)
