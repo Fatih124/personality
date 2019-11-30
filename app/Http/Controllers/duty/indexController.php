@@ -70,16 +70,16 @@ class indexController extends Controller
 
         if ($show!=0){
             $user = DB::table('users')
-                ->join('duties', 'duties.duty_add_personal', '=', 'users.id')
-                ->select('users.name', 'duties.*')
-                ->limit(1)
-                ->first($id);
+                ->join('duties', 'users.id', '=', 'duties.duty_add_personal')
+                ->where('duties.duty_id', '=', $id)
+                ->select('duties.*', 'users.name')
+                ->get();
 
             $app = DB::table('users')
-                ->join('duties', 'duties.appointed_user_id', '=', 'users.id')
+                ->join('duties', 'users.id', '=', 'duties.appointed_user_id')
+                ->where('duties.duty_id', '=', $id)
                 ->select('users.name', 'duties.*')
-                ->first($id) ;
-
+                ->get() ;
             $data = Duty::where('duty_id', '=', $id)->get();
 
             return view('duty.show', compact('data','user', 'app'));
